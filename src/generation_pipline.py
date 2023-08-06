@@ -25,7 +25,7 @@ if __name__ == "__main__":
         DATA = prepare_example(DATA)
 
         MODEL, TOKENIZER = load_model(path=ARGS.lm_path, device=ARGS.device)
-        GEN_KWARGS = {"num_beams": ARGS.num_beams,
+        GEN_KWARGS = {"num_beams": 1,
                       "max_length": 80,
                       "min_length": 20}
 
@@ -36,10 +36,13 @@ if __name__ == "__main__":
                     top_k=ARGS.top_k,
                     top_p=ARGS.top_p,
                     temperature=ARGS.sampling_temp,
+                    num_beams=ARGS.num_beams,
+                    repetition_penalty=2.5,
+                    length_penalty=1.0,
+                    early_stopping=True,
+                    no_repeat_ngram_size=2,
                 )
             )
-        else:
-            GEN_KWARGS.update(dict(num_beams=ARGS.num_beams))
 
         watermark_processor = WatermarkLogitsProcessor(
             vocab=list(TOKENIZER.get_vocab().values()),

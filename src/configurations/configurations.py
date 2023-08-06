@@ -24,7 +24,7 @@ class BaseConfig:
                                       "and the num tokens removed from real text sample")
         self.parser.add_argument("--num_beams",
                                  type=int,
-                                 default=1,
+                                 default=10,
                                  help="The number of beams to use where '1' is no beam search.")
         self.parser.add_argument("--top_k",
                                  type=int,
