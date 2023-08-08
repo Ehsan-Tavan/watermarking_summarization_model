@@ -1,4 +1,5 @@
 # ========================== Third Party libs ========================
+from typing import List
 import torch
 from transformers import LogitsProcessor
 import scipy.stats
@@ -12,7 +13,7 @@ from .hash_functions import prf_lookup, seeding_scheme_lookup
 class WatermarkBase:
     def __init__(
             self,
-            vocab: list[int] = None,
+            vocab: List[int] = None,
             gamma: float = 0.5,
             delta: float = 2.0,
             seeding_scheme: str = "simple_1",
@@ -141,7 +142,7 @@ class WatermarkLogitsProcessor(WatermarkBase, LogitsProcessor):
 
     def _score_rejection_sampling(
             self, input_ids: torch.LongTensor, scores: torch.FloatTensor, tail_rule="fixed_compute"
-    ) -> list[int]:
+    ) -> List[int]:
         """Generate greenlist based on current candidate next token. Reject and move on if
         necessary. Method not batched.
         This is only a partial version of Alg.3 "Robust Private Watermarking", as it always
@@ -325,7 +326,7 @@ class WatermarkDetector(WatermarkBase):
     def detect(
             self,
             text: str = None,
-            tokenized_text: list[int] = None,
+            tokenized_text: List[int] = None,
             return_prediction: bool = True,
             return_scores: bool = True,
             z_threshold: float = None,

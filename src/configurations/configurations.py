@@ -44,7 +44,7 @@ class BaseConfig:
                                       "multinom sampling")
         self.parser.add_argument("--gamma",
                                  type=float,
-                                 default=0.25,
+                                 default=0.5,
                                  help="The ratio of tokens to put in the greenlist when splitting "
                                       "the vocabulary",
                                  )
@@ -115,7 +115,10 @@ class BaseConfig:
 
         self.parser.add_argument("--lm_path",
                                  type=str,
-                                 default="/mnt/disk2/Language_models/t5_large_finetuned_xsum_cnn")
+                                 default="/mnt/disk2/LanguageModels/t5_large_finetuned_xsum_cnn")
+        self.parser.add_argument("--simcse_model_path",
+                                 type=str,
+                                 default="/mnt/disk2/LanguageModels/simcse_roberta_large")
 
     def get_config(self) -> argparse.Namespace:
         self.add_path()
