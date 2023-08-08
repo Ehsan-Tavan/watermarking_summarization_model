@@ -1,11 +1,12 @@
 # ============================ Third Party libs ============================
 import torch
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, DataCollatorWithPadding
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, DataCollatorWithPadding, \
+    T5ForConditionalGeneration, BartTokenizer, BartForConditionalGeneration
 
 
 def load_model(path: str, device: str = "cpu"):
     tokenizer = AutoTokenizer.from_pretrained(path)
-    model = AutoModelForSeq2SeqLM.from_pretrained(path)
+    model = T5ForConditionalGeneration.from_pretrained(path)
     model.to(device)
     model.eval()
     return model, tokenizer
