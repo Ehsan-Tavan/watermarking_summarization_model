@@ -17,7 +17,8 @@ To analyse watermarking on this model we randomly select the 1000 sample from te
 The Watermark algorithm has two main parameters to create a red and green list, gamma and alpha. Gamma is the ratio of tokens to put in the green list when splitting the vocabulary and delta is the amount of bias (absolute) to add to the logits of the green list tokens at every step.
 
 
-Figure 1 
+
+Table 1 presents the evaluation results of the "watermarks" algorithm when applied to a T5 fine-tuned summarization model. For each combination of "Gamma" and "Delta," the table reports the algorithm's performance under two distinct generation methods: "Greedy Search" and "Beam Search" decoding.
 
 <table style='text-align:center;'>
   <tr>
@@ -26,8 +27,11 @@ Figure 1
     <td colspan="2"><b>Rouge-1</b></td>
     <td colspan="2"><b>Rouge-2</b></td>
     <td colspan="2"><b>Rouge-L</b></td>
+    <td colspan="2"><b>z-score</b></td>
   </tr>
   <tr>
+    <td colspan="1"><b>Greedy</b></td>
+    <td colspan="1"><b>Beam</b></td>
     <td colspan="1"><b>Greedy</b></td>
     <td colspan="1"><b>Beam</b></td>
     <td colspan="1"><b>Greedy</b></td>
@@ -44,6 +48,8 @@ Figure 1
     <td colspan="1"> 5.42 </td>
     <td colspan="1"> 13.83 </td>
     <td colspan="1"> 14.4 </td>
+    <td colspan="1"> - 0.11 </td>
+    <td colspan="1"> - 0.32 </td>
   </tr>
   <tr>
     <td>2</td>
@@ -53,6 +59,8 @@ Figure 1
     <td colspan="1"> 4.33 </td>
     <td colspan="1"> 13.17 </td>
     <td colspan="1"> 13.61 </td>
+    <td colspan="1"> 3.37 </td>
+    <td colspan="1"> 4.1 </td>
   </tr>
   <tr>
     <td colspan="1"> 5 </td>
@@ -62,6 +70,8 @@ Figure 1
     <td colspan="1"> 1.59 </td>
     <td colspan="1"> 10.8 </td>
     <td colspan="1"> 8.98 </td>
+    <td colspan="1"> 8.21 </td>
+    <td colspan="1"> 8.51 </td>
   </tr>
   <tr>
     <td colspan="1"> 10 </td>
@@ -71,6 +81,8 @@ Figure 1
     <td colspan="1"> 0.85 </td>
     <td colspan="1"> 9.17 </td>
     <td colspan="1"> 6.58 </td>
+    <td colspan="1"> 11.55 </td>
+    <td colspan="1"> 7.96 </td>
   </tr>
 <tr>
   <td rowspan='4'>0.5</td>
@@ -81,6 +93,8 @@ Figure 1
     <td colspan="1"> 5.42 </td>
     <td colspan="1"> 13.83 </td>
     <td colspan="1"> 14.4 </td>
+    <td colspan="1"> - 0.30 </td>
+    <td colspan="1"> - 0.15 </td>
   </tr>
   <tr>
     <td>2</td>
@@ -90,6 +104,8 @@ Figure 1
     <td colspan="1"> 4.59 </td>
     <td colspan="1"> 13.09 </td>
     <td colspan="1"> 13.83 </td>
+    <td colspan="1"> 2.47 </td>
+    <td colspan="1"> 3.42 </td>
   </tr>
   <tr>
     <td colspan="1"> 5 </td>
@@ -99,6 +115,8 @@ Figure 1
     <td colspan="1"> 2.57 </td>
     <td colspan="1"> 11.59 </td>
     <td colspan="1"> 10.83 </td>
+    <td colspan="1"> 4.6 </td>
+    <td colspan="1"> 5.37 </td>
   </tr>
   <tr>
     <td colspan="1"> 10 </td>
@@ -108,6 +126,8 @@ Figure 1
     <td colspan="1"> 1.7 </td>
     <td colspan="1"> 10.26 </td>
     <td colspan="1"> 8.27 </td>
+    <td colspan="1"> 6.2 </td>
+    <td colspan="1"> 5.06 </td>
   </tr>
   <tr>
   <td rowspan="4"> 0.75 </td>
@@ -118,6 +138,8 @@ Figure 1
     <td colspan="1"> 5.42 </td>
     <td colspan="1"> 13.83 </td>
     <td colspan="1"> 14.4 </td>
+    <td colspan="1"> 0.12 </td>
+    <td colspan="1"> 0.11 </td>
   </tr>
   <tr>
     <td>2</td>
@@ -127,6 +149,8 @@ Figure 1
     <td colspan="1"> 5.15 </td>
     <td colspan="1"> 13.31 </td>
     <td colspan="1"> 14.41 </td>
+    <td colspan="1"> 1.8 </td>
+    <td colspan="1"> 2.36 </td>
   </tr>
   <tr>
     <td colspan="1"> 5 </td>
@@ -136,6 +160,8 @@ Figure 1
     <td colspan="1"> 4.16 </td>
     <td colspan="1"> 12.77 </td>
     <td colspan="1"> 13.51 </td>
+    <td colspan="1"> 2.61 </td>
+    <td colspan="1"> 3.16 </td>
   </tr>
   <tr>
     <td colspan="1"> 10 </td>
@@ -145,8 +171,15 @@ Figure 1
     <td colspan="1"> 3.77 </td>
     <td colspan="1"> 12.25 </td>
     <td colspan="1"> 12.87 </td>
+    <td colspan="1"> 2.97 </td>
+    <td colspan="1"> 3.34 </td>
   </tr>
+
 </table>
+
+As gamma increases, the size of the green list expands. Considering delta is 10 (hard red list), there is an observable improvement in Rouge-1, Rouge-2, and Rouge-L scores when gamma and green list become larger.
+
+
 
 <b style='text-align:center;'>Table 1: Analysis of Machine Learning Classifiers as Baseline
 Models</b>
