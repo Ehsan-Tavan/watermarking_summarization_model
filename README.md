@@ -184,10 +184,12 @@ As shown in table 1, the model can achieve a very strong watermark (large z-scor
 
 However, it is crucial to note that enhancing the watermark's strength can lead to potential distortion in the generated text.  For instance, within this configuration, the Rouge-1 scores for the greedy search method are 13.87 for γ set to 0.25, while increasing γ to 0.5 under the same δ value of 10,  the Rouge-1 score rises to 15.09. Furthermore, choosing γ to 0.75 results in a Rouge-1 score of 17.74 for the greedy search. In summary, if we aim for a very strong watermark, the performance of the model in the summarization task decreases.
 
+Figure 1 represents the tradeoff between the z-score and rouge-1, considering various green list size ratio (γ). When examining the case of a small green list bias (δ=2), the alterations in the z-score and rouge-1 metrics exhibit a minimal changes to adjustments in the γ value. This is because the small delta cannot make a noticeable alteration in the softmax output value. Conversely, when a greater green list bias is used (δ=10), changing in γ lead to substantial alterations in both z-score and rouge-1 metrics.
 
-| δ=10                             | δ=5                            | δ=2                            |
+
+| δ=2                            | δ=5                            | δ=10                            |
 | ----------------------------------- | ----------------------------------- | ----------------------------------- |
-| ![ehsa](assets/plots/tradeoff_zscore_rouge_1_delta_10.png) | ![ehsa](assets/plots/tradeoff_zscore_rouge_1_delta_5.png) | ![ehsa](assets/plots/tradeoff_zscore_rouge_1_delta_2.png)|
+| ![ehsa](assets/plots/tradeoff_zscore_rouge_1_delta_2.png) | ![ehsa](assets/plots/tradeoff_zscore_rouge_1_delta_5.png) | ![ehsa](assets/plots/tradeoff_zscore_rouge_1_delta_10.png)|
 
 <b style='text-align:center;'>Figure 1: Tradeoff between z-score and Rouge-1 with different δ.</b>
 
