@@ -185,6 +185,12 @@ As shown in table 1, the model can achieve a very strong watermark (large z-scor
 However, it is crucial to note that enhancing the watermark's strength can lead to potential distortion in the generated text.  For instance, within this configuration, the Rouge-1 scores for the greedy search method are 13.87 for γ set to 0.25, while increasing γ to 0.5 under the same δ value of 10,  the Rouge-1 score rises to 15.09. Furthermore, choosing γ to 0.75 results in a Rouge-1 score of 17.74 for the greedy search. In summary, if we aim for a very strong watermark, the performance of the model in the summarization task decreases.
 
 
+| δ=10                             | δ=5                            | δ=2                            |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| ![ehsa](assets/plots/tradeoff_zscore_rouge_1_delta_10.png) | ![ehsa](assets/plots/tradeoff_zscore_rouge_1_delta_5.png) | ![ehsa](assets/plots/tradeoff_zscore_rouge_1_delta_2.png)|
+
+
+
 ![ehsa](assets/plots/rouge_gamma=0.25.png)
 ![ehsa](assets/plots/rouge_gamma=0.5.png)
 ![ehsa](assets/plots/rouge_gamma=0.75.png)
