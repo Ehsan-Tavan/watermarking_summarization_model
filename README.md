@@ -189,6 +189,8 @@ However, it is crucial to note that enhancing the watermark's strength can lead 
 | ----------------------------------- | ----------------------------------- | ----------------------------------- |
 | ![ehsa](assets/plots/tradeoff_zscore_rouge_1_delta_10.png) | ![ehsa](assets/plots/tradeoff_zscore_rouge_1_delta_5.png) | ![ehsa](assets/plots/tradeoff_zscore_rouge_1_delta_2.png)|
 
+<b style='text-align:center;'>Figure 1: Tradeoff between z-score and Rouge-1 with different δ.</b>
+
 
 
 ![ehsa](assets/plots/rouge_gamma=0.25.png)
