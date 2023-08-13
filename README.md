@@ -193,9 +193,13 @@ Figure 1 represents the tradeoff between the z-score and rouge-1, considering va
 
 <b style='text-align:center;'>Figure 1: Tradeoff between z-score and Rouge-1 with different δ.</b>
 
+| γ=0.25                            | γ=0.5                            | γ=0.75                            |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| ![ehsa](assets/plots/tradeoff_zscore_rouge_1_gamma_0.25.png) | ![ehsa](assets/plots/tradeoff_zscore_rouge_1_gamma_0.5.png) | ![ehsa](assets/plots/tradeoff_zscore_rouge_1_gamma_0.75.png)|
+
+<b style='text-align:center;'>Figure 2: Tradeoff between z-score and Rouge-1 with different γ.</b>
 
 
-![ehsa](assets/plots/rouge_gamma=0.25.png)
-![ehsa](assets/plots/rouge_gamma=0.5.png)
-![ehsa](assets/plots/rouge_gamma=0.75.png)
+
+
 
