@@ -193,6 +193,9 @@ Figure 1 represents the tradeoff between the z-score and rouge-1, considering va
 
 <b style='text-align:center;'>Figure 1: Tradeoff between z-score and Rouge-1 with different δ.</b>
 
+Figure 2 shows the tradeoff between z-score and rouge-1 using different green list bias δ. As you can see, with γ equal to 0.25, the largest change in z-score and rouge-1 occurs with δ change. Because due to the smallness of the green token list, the increase in δ can greatly affect the performance of the model and cause a decrease in rouge-. Also, in γ equal to 0.75, with the change of δ, the least decrease in z-score and the least increase in rouge 1 occurs compared to γ equal to 0.25. Because the green token list is large enough for the model to achieve an acceptable rouge-1. On the other hand, the large size of the green token list causes the z-score value to be lower compared to γ equal to 0.25.
+
+
 | γ=0.25                            | γ=0.5                            | γ=0.75                            |
 | ----------------------------------- | ----------------------------------- | ----------------------------------- |
 | ![ehsa](assets/plots/tradeoff_zscore_rouge_1_gamma_0.25.png) | ![ehsa](assets/plots/tradeoff_zscore_rouge_1_gamma_0.5.png) | ![ehsa](assets/plots/tradeoff_zscore_rouge_1_gamma_0.75.png)|
