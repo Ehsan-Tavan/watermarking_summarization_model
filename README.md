@@ -18,12 +18,12 @@ The Watermark algorithm has two main parameters to create a red and green list, 
 
 
 
-Table 1 presents the evaluation results of the "watermarks" algorithm when applied to a T5 fine-tuned summarization model. For each combination of "Gamma" and "Delta," the table reports the algorithm's performance under two distinct generation methods: "Greedy Search" and "Beam Search" decoding.
+Table 1 presents the evaluation results of the "watermarks" algorithm when applied to a T5 fine-tuned summarization model. For each combination of "Gamma γ" and "Delta δ", the table reports the algorithm's performance under two distinct generation methods: "Greedy Search" and "Beam Search" decoding.
 
 <table style='text-align:center;'>
   <tr>
-    <td rowspan='2'> <b>Gamma</b> </td>
-    <td rowspan='2'> <b>Delta</b> </td>
+    <td rowspan='2'> <b>Gamma γ</b> </td>
+    <td rowspan='2'> <b>Delta δ</b> </td>
     <td colspan="2"><b>Rouge-1</b></td>
     <td colspan="2"><b>Rouge-2</b></td>
     <td colspan="2"><b>Rouge-L</b></td>
@@ -177,12 +177,12 @@ Table 1 presents the evaluation results of the "watermarks" algorithm when appli
 
 </table>
 
-As gamma increases, the size of the green list expands. Considering delta is 10 (hard red list), there is an observable improvement in Rouge-1, Rouge-2, and Rouge-L scores when gamma and green list become larger.
-
-
-
 <b style='text-align:center;'>Table 1: Analysis of Machine Learning Classifiers as Baseline
 Models</b>
+
+As shown in table 1, the model can achieve a very strong watermark (large z-score) by choosing a small green list size γ and a large green list bias δ. For instance, in our analysis, by selecting γ as 0.25 and δ as 10, we observe z-scores of 11.55 for greedy search and 7.96 for beam search. 
+
+However, it is crucial to note that enhancing the watermark's strength can lead to potential distortion in the generated text.  For instance, within this configuration, the Rouge-1 scores for the greedy search method are 13.87 for γ set to 0.25, while increasing γ to 0.5 under the same δ value of 10,  the Rouge-1 score rises to 15.09. Furthermore, choosing γ to 0.75 results in a Rouge-1 score of 17.74 for the greedy search. In summary, if we aim for a very strong watermark, the performance of the model in the summarization task decreases.
 
 
 ![ehsa](assets/plots/rouge_gamma=0.25.png)
