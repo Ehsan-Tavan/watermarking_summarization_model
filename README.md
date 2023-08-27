@@ -177,8 +177,7 @@ Table 1 presents the evaluation results of the "watermarks" algorithm when appli
 
 </table>
 
-<b style='text-align:center;'>Table 1: Analysis of Machine Learning Classifiers as Baseline
-Models</b>
+<b style='text-align:center;'>Table 1: Summarization results for various γ and δ values.</b>
 
 As shown in table 1, the model can achieve a very strong watermark (large z-score) by choosing a small green list size γ and a large green list bias δ. For instance, in our analysis, by selecting γ as 0.25 and δ as 10, we observe z-scores of 11.55 for greedy search and 7.96 for beam search. 
 
@@ -201,6 +200,138 @@ Figure 2 illustrates the relationship between the z-score and rouge-1 metrics, c
 
 <b style='text-align:center;'>Figure 2: Tradeoff between z-score and Rouge-1 with different γ.</b>
 
+
+<table style='text-align:center;'>
+  <tr>
+    <td rowspan='2'> <b>Gamma γ</b> </td>
+    <td rowspan='2'> <b>Delta δ</b> </td>
+    <td colspan="2"><b>Coherence</b></td>
+    <td colspan="2"><b>Mauve</b></td>
+    <td colspan="2"><b>z-score</b></td>
+  </tr>
+  <tr>
+    <td colspan="1"><b>Greedy</b></td>
+    <td colspan="1"><b>Beam</b></td>
+    <td colspan="1"><b>Greedy</b></td>
+    <td colspan="1"><b>Beam</b></td>
+    <td colspan="1"><b>Greedy</b></td>
+    <td colspan="1"><b>Beam</b></td>
+  </tr>
+  <tr>
+  <td rowspan='4'>0.25</td>
+    <td colspan="1"> 0(NW) </td>
+    <td colspan="1"> 62.98 </td>
+    <td colspan="1"> 63.04 </td>
+    <td colspan="1"> 95.29 </td>
+    <td colspan="1"> 96.71 </td>
+    <td colspan="1"> -0.11 </td>
+    <td colspan="1"> -0.32 </td>
+  </tr>
+  <tr>
+    <td colspan="1"> 2 </td>
+    <td colspan="1"> 61.25 </td>
+    <td colspan="1"> 61.38 </td>
+    <td colspan="1"> 95.68 </td>
+    <td colspan="1"> 91.82 </td>
+    <td colspan="1"> 3.37 </td>
+    <td colspan="1"> 4.1 </td>
+  </tr>
+  <tr>
+    <td colspan="1"> 5 </td>
+    <td colspan="1"> 56 </td>
+    <td colspan="1"> 57.63 </td>
+    <td colspan="1"> 92.42 </td>
+    <td colspan="1"> 67.97 </td>
+    <td colspan="1"> 8.21 </td>
+    <td colspan="1"> 8.51 </td>
+  </tr>
+  <tr>
+    <td colspan="1"> 10 </td>
+    <td colspan="1"> 52.11 </td>
+    <td colspan="1"> 55.51 </td>
+    <td colspan="1"> 87.54 </td>
+    <td colspan="1"> 30.44 </td>
+    <td colspan="1"> 11.55 </td>
+    <td colspan="1"> 7.96 </td>
+  </tr>
+  <tr>
+  <td rowspan='4'>0.5</td>
+    <td colspan="1"> 0(NW) </td>
+    <td colspan="1"> 62.98 </td>
+    <td colspan="1"> 63.04 </td>
+    <td colspan="1"> 95.29 </td>
+    <td colspan="1"> 96.71 </td>
+    <td colspan="1"> -0.30 </td>
+    <td colspan="1"> -0.15 </td>
+  </tr>
+  <tr>
+    <td colspan="1"> 2 </td>
+    <td colspan="1"> 62.12 </td>
+    <td colspan="1"> 62.97 </td>
+    <td colspan="1"> 95.5 </td>
+    <td colspan="1"> 94.73 </td>
+    <td colspan="1"> 2.47 </td>
+    <td colspan="1"> 3.42 </td>
+  </tr>
+  <tr>
+    <td colspan="1"> 5 </td>
+    <td colspan="1"> 60.05 </td>
+    <td colspan="1"> 60.96 </td>
+    <td colspan="1"> 94.28 </td>
+    <td colspan="1"> 67.7 </td>
+    <td colspan="1"> 4.6 </td>
+    <td colspan="1"> 5.37 </td>
+  </tr>
+  <tr>
+    <td colspan="1"> 10 </td>
+    <td colspan="1"> 57.82 </td>
+    <td colspan="1"> 59.91 </td>
+    <td colspan="1"> 94.7 </td>
+    <td colspan="1"> 32.34 </td>
+    <td colspan="1"> 6.2 </td>
+    <td colspan="1"> 5.06 </td>
+  </tr>
+  <tr>
+  <td rowspan='4'>0.75</td>
+    <td colspan="1"> 0(NW) </td>
+    <td colspan="1"> 62.98 </td>
+    <td colspan="1"> 63.04 </td>
+    <td colspan="1"> 95.29 </td>
+    <td colspan="1"> 96.71 </td>
+    <td colspan="1"> 0.12 </td>
+    <td colspan="1"> 0.11 </td>
+  </tr>
+  <tr>
+    <td colspan="1"> 2 </td>
+    <td colspan="1"> 62.73 </td>
+    <td colspan="1"> 63.49 </td>
+    <td colspan="1"> 96 </td>
+    <td colspan="1"> 95.8 </td>
+    <td colspan="1"> 1.8 </td>
+    <td colspan="1"> 2.36 </td>
+  </tr>
+  <tr>
+    <td colspan="1"> 5 </td>
+    <td colspan="1"> 61.93 </td>
+    <td colspan="1"> 62.48 </td>
+    <td colspan="1"> 95.1 </td>
+    <td colspan="1"> 95.91 </td>
+    <td colspan="1"> 2.61 </td>
+    <td colspan="1"> 3.16 </td>
+  </tr>
+  <tr>
+    <td colspan="1"> 10 </td>
+    <td colspan="1"> 61.01 </td>
+    <td colspan="1"> 61.97 </td>
+    <td colspan="1"> 91.48 </td>
+    <td colspan="1"> 92.71 </td>
+    <td colspan="1"> 2.97 </td>
+    <td colspan="1"> 3.34 </td>
+  </tr>
+</table>
+
+<b style='text-align:center;'>Table 2: Coherence and Mauve analysis on summarization task for various γ and δ values.
+Models</b>
 
 
 
