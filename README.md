@@ -17,6 +17,7 @@ To analyse watermarking on this model we randomly select the 1000 sample from te
 The Watermark algorithm has two main parameters to create a red and green list, gamma and alpha. Gamma is the ratio of tokens to put in the green list when splitting the vocabulary and delta is the amount of bias (absolute) to add to the logits of the green list tokens at every step.
 
 
+### Analysis Rouge Score
 
 Table 1 presents the evaluation results of the "watermarks" algorithm when applied to a T5 fine-tuned summarization model. For each combination of "Gamma γ" and "Delta δ", the table reports the algorithm's performance under two distinct generation methods: "Greedy Search" and "Beam Search" decoding.
 
@@ -200,6 +201,12 @@ Figure 2 illustrates the relationship between the z-score and rouge-1 metrics, c
 
 <b style='text-align:center;'>Figure 2: Tradeoff between z-score and Rouge-1 with different γ.</b>
 
+### Analysis Coherence and Mauve
+
+Table 2 presents a comprehensive analysis of Coherence and Mauve scores in the context of a summarization task, showcasing the impact of different gamma (γ) and delta (δ) values. As shown in Table 2, in hard watermarking (a small green list size γ and a large green list bias δ),  it is evident that the model's generated summaries exhibit lower coherence and mauve scores in comparison to the gold standard summaries. Also, in hard watermarking, the z-score has the highest values, reaching 11.55 and 7.96 for the greedy and beam search, respectively. 
+
+As evidenced in Table 2, the increase of γ and the subsequent selection of a larger green list contribute to the increase of coherence and mauve scores in generated summaries.
+
 
 <table style='text-align:center;'>
   <tr>
@@ -330,8 +337,7 @@ Figure 2 illustrates the relationship between the z-score and rouge-1 metrics, c
   </tr>
 </table>
 
-<b style='text-align:center;'>Table 2: Coherence and Mauve analysis on summarization task for various γ and δ values.
-Models</b>
+<b style='text-align:center;'>Table 2: Coherence and Mauve analysis on summarization task for various γ and δ values. </b>
 
 
 
